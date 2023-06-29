@@ -4,6 +4,6 @@
 
 @layer utilities {
     .transition-custom{
-@apply transition-all ease-in-out duration-1000
+@apply transition-all ease-in-out duration-500
     }
 }
