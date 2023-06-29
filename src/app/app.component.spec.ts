@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'BlueskyLandingPage'`, () => {
+  it(`should have as title 'BlueskyWebsite'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('BlueskyLandingPage');
+    expect(app.title).toEqual('BlueskyWebsite');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('BlueskyLandingPage app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('BlueskyWebsite app is running!');
   });
 });

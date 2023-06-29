@@ -43,7 +43,7 @@ export class InicioPageComponent implements OnInit{
     whatsappLink.href = `https://api.whatsapp.com/send?phone=${numberPhone}&text=${encodeURIComponent(message)}`
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit() {
+    window.scrollTo(0, 0);
   }
 }
