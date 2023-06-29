@@ -1,0 +1,184 @@
+<div class="bg-white dark:bg-slate-900 transition-custom">
+  <main>
+     
+    <!-- Image de fondo -->
+    <div class="relative isolate h-2/3 px-6 lg:h-screen lg:px-8 lg:grid lg:grid-cols-3 lg:gap-5 lg:justify-items-center">
+      <div class="absolute -z-10 left-0 top-0 h-full w-full dark:hidden transition-custom">
+        <img src="../../../../../assets/background-main.webp" class="object-fill h-full w-full sm:w-screen ">
+      </div>
+
+      <!-- Contenido del encabezado -->
+      <div class="mx-auto max-w-2xl pt-48 pb-20 lg:py-56 lg:col-span-2">
+        <div class="text-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-center text-slate-900 dark:text-white transition-custom">¡Haz clic para una reparación feliz!</h1>
+          <p class="mt-6 text-lg leading-8 text-slate-600 text-center max-w-3xl mx-auto dark:text-slate-400 transition-custom">Tu celular merece lo mejor, contáctanos para una reparación excepcional.</p>
+          <div class="mt-6 sm:mt-10 flex items-center justify-center gap-x-6">
+              <a href="https://wa.me/message/BQTESQK4MHVYK1" id="wspButton" class="bg-primary-500 hover:bg-green-400 focus:outline-none  text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto transition-all">WhatsApp</a>
+              <button (click)="scrollToSection()" class="hidden sm:flex text-sm scroll-smooth font-semibold leading-6 text-gray-800 dark:text-slate-200 transition-custom">Leer mas<span>→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- cell-phone -->
+      <section class="py-10 px-6  lg:p-0 lg:py-0 lg:my-auto">
+        <div class="flex flex-col w-max mx-auto">
+          <img src="../../../../../assets/phone-mobile.webp" alt="bluesky-instagram" class="max-h-[550px] w-auto">
+          <div class="flex justify-center pt-10">
+            <span class="border border-slate-300 rounded-full py-2 px-6 dark:border-slate-700 transition-custom lg:hidden">
+              <a href="https://instagram.com/blueskymobiles?igshid=MzRlODBiNWFlZA==" class="text-primary-500 dark:text-primary-400 transition-custom">Seguinos <i class="uil uil-arrow-right"></i></a>
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <!-- Sección de marcas -->
+  <section class="h-auto py-16 bg-white px-6 max-w-4xl mx-auto md:pb-40 dark:bg-slate-900 transition-custom">
+    <h2 class="text-lg font-semibold text-center text-gray-900 dark:text-slate-300 transition-custom">Trabajamos una amplia variedad de marcas</h2>
+    <div class="mt-8 sm:mt-10">
+      <ul class="grid grid-cols-2 gap-y-10 gap-x-4 auto-cols-min sm:grid-cols-3 md:grid-cols-">
+        <li *ngFor="let company of logosCompany; let last = last"  [ngClass]="last? 'col-span-2 list-none flex justify-center items-center md:col-span-3' : 'list-none flex justify-center items-center'">
+          <img [src]="company.ruta" [alt]="company.name" class="max-h-8 w-min dark:logos-dark transition-custom">
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="relative overflow-hidden bg-slate-50 dark:bg-slate-800 transition-custom">  
+    <!-- fondo de cuadros pequenos -->
+    <div class="absolute inset-x-0 bottom-0 h-96 text-slate-600/10 dark:text-slate-300/10 transition-custom [mask-image:linear-gradient(to_bottom,transparent,white)]">
+       <svg class="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+             <pattern id="pricing-pattern" width="32" height="32" patternUnits="userSpaceOnUse" x="50%" y="100%" patternTransform="translate(0 -1)">
+                <path d="M0 32V.5H32" fill="none" stroke="currentColor"></path>
+             </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#pricing-pattern)"></rect>
+       </svg>
+    </div>
+
+
+    <div id="servicios" class="py-20 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-6 lg:gap-10 md:px-10 md:mx-auto [&>div]:relative [&>div]:h- [&>div]:sm:border [&>div]:sm:border-slate-200 [&>div]:sm:rounded-3xl [&>div]:shadow-lg [&>div]:dark:border-slate-700 [&>div]:transition-custom [&>div>article]:h-full [&>div>article]:bg-white [&>div>article]:dark:bg-slate-900 [&>div>article]:transition-custom">
+      <div>
+        <div class="flex absolute -bottom-px left-10 h-1 w-[80%]">
+          <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(244,63,94,0)_0%,rgba(244,63,94,0.8997724089635855)_64%,rgba(29,154,221,1)_79%,rgba(29,154,221,0.8241421568627451)_92%,rgba(29,154,221,0)_100%)]"></div>
+          <div class="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(244,63,94,0)_0%,rgba(244,63,94,1)_60%,rgba(29,154,221,0.8241421568627451)_92%,rgba(29,154,221,0)_100%)]"></div>
+        </div>
+        <!-- cuadro con borders -->
+        <article class="relative px-4 py-10 sm:rounded-3xl sm:px-10">
+          <!-- Icono del servicio -->
+          <div class="w-16 h-16 p-[0.1875rem] rounded-full ring-1 ring-slate-900/10 shadow overflow-hidden dark:bg-rose-400 flex justify-center items-center transition-custom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-14 h-14 p-1 fill-rose-500 bg-rose-300/40 rounded-full dark:bg-rose-500 dark:fill-rose-200 transition-custom">
+              <path d="M17.004 10.407c.138.435-.216.842-.672.842h-3.465a.75.75 0 01-.65-.375l-1.732-3c-.229-.396-.053-.907.393-1.004a5.252 5.252 0 016.126 3.537zM8.12 8.464c.307-.338.838-.235 1.066.16l1.732 3a.75.75 0 010 .75l-1.732 3.001c-.229.396-.76.498-1.067.16A5.231 5.231 0 016.75 12c0-1.362.519-2.603 1.37-3.536zM10.878 17.13c-.447-.097-.623-.608-.394-1.003l1.733-3.003a.75.75 0 01.65-.375h3.465c.457 0 .81.408.672.843a5.252 5.252 0 01-6.126 3.538z" />
+              <path fill-rule="evenodd" d="M21 12.75a.75.75 0 000-1.5h-.783a8.22 8.22 0 00-.237-1.357l.734-.267a.75.75 0 10-.513-1.41l-.735.268a8.24 8.24 0 00-.689-1.191l.6-.504a.75.75 0 10-.964-1.149l-.6.504a8.3 8.3 0 00-1.054-.885l.391-.678a.75.75 0 10-1.299-.75l-.39.677a8.188 8.188 0 00-1.295-.471l.136-.77a.75.75 0 00-1.477-.26l-.136.77a8.364 8.364 0 00-1.377 0l-.136-.77a.75.75 0 10-1.477.26l.136.77c-.448.121-.88.28-1.294.47l-.39-.676a.75.75 0 00-1.3.75l.392.678a8.29 8.29 0 00-1.054.885l-.6-.504a.75.75 0 00-.965 1.149l.6.503a8.243 8.243 0 00-.689 1.192L3.8 8.217a.75.75 0 10-.513 1.41l.735.267a8.222 8.222 0 00-.238 1.355h-.783a.75.75 0 000 1.5h.783c.042.464.122.917.238 1.356l-.735.268a.75.75 0 10.513 1.41l.735-.268c.197.417.428.816.69 1.192l-.6.504a.75.75 0 10.963 1.149l.601-.505c.326.323.679.62 1.054.885l-.392.68a.75.75 0 101.3.75l.39-.679c.414.192.847.35 1.294.471l-.136.771a.75.75 0 101.477.26l.137-.772a8.376 8.376 0 001.376 0l.136.773a.75.75 0 101.477-.26l-.136-.772a8.19 8.19 0 001.294-.47l.391.677a.75.75 0 101.3-.75l-.393-.679a8.282 8.282 0 001.054-.885l.601.504a.75.75 0 10.964-1.15l-.6-.503a8.24 8.24 0 00.69-1.191l.735.268a.75.75 0 10.512-1.41l-.734-.268c.115-.438.195-.892.237-1.356h.784zm-2.657-3.06a6.744 6.744 0 00-1.19-2.053 6.784 6.784 0 00-1.82-1.51A6.704 6.704 0 0012 5.25a6.801 6.801 0 00-1.225.111 6.7 6.7 0 00-2.15.792 6.784 6.784 0 00-2.952 3.489.758.758 0 01-.036.099A6.74 6.74 0 005.251 12a6.739 6.739 0 003.355 5.835l.01.006.01.005a6.706 6.706 0 002.203.802c.007 0 .014.002.021.004a6.792 6.792 0 002.301 0l.022-.004a6.707 6.707 0 002.228-.816 6.781 6.781 0 001.762-1.483l.009-.01.009-.012a6.744 6.744 0 001.18-2.064c.253-.708.39-1.47.39-2.264a6.74 6.74 0 00-.408-2.308z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h2 class="mt-6 font-semibold text-rose-500 dark:text-rose-400 transition-custom">Reparacion y Servicios Tecnicos</h2>
+          <p class="mt-4 text-3xl font-extrabold dark:text-slate-100 transition-custom">Ofrecemos garantías en todas nuestras reparaciones</p>
+          <p class="mt-2 max-w-3xl space-y-6 dark:text-slate-100 transition-custom">Estamos aquí para solucionar cualquier problema, desde pantallas rotas hasta integrados de placa. Trabajamos con micro soldadura.</p>
+          <a href="servicios" class="group mt-6 inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-rose-50 text-rose-600 hover:bg-rose-200 hover:text-rose-700 focus:ring-rose-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 transition-custom">
+          Ver mas <i class="uil uil-angle-right"></i>
+          </a>
+        </article>
+      </div>
+
+
+      <div>
+        <div class="flex absolute -bottom-px left-10 h-1 w-[80%]">
+          <div class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(99,102,241,0)_0%,rgba(99,102,241,0.8997724089635855)_64%,rgba(29,154,221,1)_79%,rgba(29,154,221,0.8241421568627451)_92%,rgba(29,154,221,0)_100%)]"></div>
+          <div class="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(99,102,241,0)_0%,rgba(99,102,241,1)_60%,rgba(29,154,221,0.8241421568627451)_92%,rgba(29,154,221,0)_100%)]"></div>
+        </div>
+       
+        <!-- cuadro con borders -->
+        <article class="relative px-4 py-10 sm:rounded-3xl sm:px-10">
+          <!-- Icono del servicio -->
+          <div class="w-16 h-16 p-[0.1875rem] rounded-full ring-1 ring-slate-900/10 shadow overflow-hidden dark:bg-indigo-400 flex justify-center items-center transition-custom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-14 h-14 p-2 fill-indigo-600 bg-indigo-300/40 rounded-full dark:bg-indigo-500 dark:fill-indigo-200 transition-custom">
+            <path fill-rule="evenodd" d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z" clip-rule="evenodd" />
+            </svg>
+          </div>
+
+          <h2 class="mt-6 font-semibold text-indigo-500 dark:text-indigo-400 transition-custom">Servicios de Software</h2>
+          <p class="mt-4 text-3xl font-extrabold dark:text-slate-100 transition-custom">Agilidad garantizada: Tu celular listo para usar en el día</p>
+          <p class="mt-2 max-w-3xl space-y-6 dark:text-slate-100 transition-custom">Solucionamos problemas de momoria, reinicios repentinos y cualquier problemas de arrande en tu celular.</p>
+          <a href="servicios#software" class="group mt-6 inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-indigo-50 text-indigo-600 hover:bg-indigo-200 hover:text-indigo-700 focus:ring-indigo-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500  transition-custom">
+          Ver mas <i class="uil uil-angle-right"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+ </section>
+
+
+  <!-- Map -->
+  <section class="py-20 md:px-10">
+    <div class="relative isolate max-h-max px-6 py-20 md:px-8">
+      <!-- background -->
+      <div class="absolute top-0 left-0 w-full h-full -z-50">
+        <div class=" h-full w-full bg-gradient-to-bl from-rose-500/30 to-blue-500 opacity-25 md:rounded-3xl"></div>
+      </div>
+      <div class="md:flex">
+        <div>
+          <h2 class="text-2xl text-slate-900 font-bold dark:text-slate-100 transition-custom">¡No esperes más! Vení a visitarnos</h2>
+          <p class="text-base text-slate-900 mt-4 dark:text-slate-100 transition-custom">Descubrí por qué somos tu mejor opción en reparaciones y servicios técnicos para celulares. En nuestro local encontrarás accesorios para celular, parlantes y más.  Si estás buscando una atención personalizada, ¡has llegado al lugar correcto!</p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1780.1418575335026!2d-65.206295!3d-26.830927!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d6c7f308d7d%3A0x349ac50bc9a3f789!2sBluesky%20Mobiles!5e0!3m2!1ses-419!2sar!4v1686692372949!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="h-60 w-full mt-10 shadow-md rounded-lg md:h-80 md:mt-0"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- FQAs -->
+  <section class="px-6 py-16 max-w-5xl md:px-10 md:mx-auto">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 transition-custom">Preguntas frecuentas</h2>
+    <div class="grid grid-cols-1 gap-y-5 divide-y border-t mt-10 [&>details]:pt-6 [&>details]:transition-custom [&>details>sumary]:text-slate-900 [&>details>sumary]:select-none [&>details>div>p]:text-slate-600 dark:border-slate-700 dark:divide-slate-700 [&>details>div>p]:dark:text-slate-300 transition-custom">
+      <details class="w-full text-start text-base group pt-6">
+        <summary class=" dark:text-white font-semibold  transition-custom focus:outline-none">Formas de pago</summary>
+        <div>
+          <p class="text-base font-normal mt-4 dark:text-slate-100 transition-custom">Aceptamos todos los medios de pago, incluyendo efectivo, tarjetas de débito y crédito, transferencias bancarias y también estamos a la vanguardia al aceptar criptomonedas.</p>
+          <p class="text-base font-normal mt-4  dark:text-slate-100 transition-custom">Queremos que disfrutes de una experiencia sin complicaciones al momento de realizar tu compra o pago por nuestros servicios.</p>
+        </div>
+      </details>
+
+      <details class="w-full text-start text-base group">
+        <summary class=" text-slate-900 dark:text-white font-semibold transition-custom focus:outline-none">Garantías</summary>
+        <div>
+          <p class="text-base font-normal pr-12 mt-4  dark:text-slate-100 transition-custom">Para los cambios de módulo, contamos con garantías específicas basadas en el modelo de tu celular. Esto significa que te proporcionamos una cobertura de garantía de 3 días para asegurar que estés satisfecho con el nuevo módulo instalado.</p>
+          <p class="text-base font-normal pr-12 mt-4  dark:text-slate-100 transition-custom">En cuanto a nuestras reparaciones y productos, te ofrecemos una garantía extendida de 7 días. Esto nos permite brindarte la confianza de que nuestros servicios y productos cumplen con los más altos estándares de calidad.</p>
+        </div>
+      </details>
+
+      <details class="w-full text-start text-base group">
+        <summary class=" text-slate-900 dark:text-white font-semibold transition-custom focus:outline-none">¿Cuánto tiempo lleva realizar una reparación?</summary>
+        <div>
+          <p class="text-base font-normal pr-12 mt-4  dark:text-slate-100 transition-custom">En el caso de los servicios técnicos y reparaciones, nuestro equipo trabaja diligentemente para resolver los problemas durante el día. Nos comprometemos a brindarte un servicio eficiente que te permita tener tu celular en perfecto estado en el menor tiempo posible.</p>
+          <p class="text-base font-normal pr-12 mt-4  dark:text-slate-100 transition-custom">Cuando se trata de servicios de software, nos destacamos por nuestra rapidez, soluciamos cualquier problema en menos de 2 horas, para que puedas USAR nuevamente tu dispositivo sin demoras.</p>
+        </div>
+      </details>
+      
+      <details class="w-full text-start text-base group">
+        <summary class=" text-slate-900 dark:text-white font-semibold transition-custom focus:outline-none">¿Venden accesorios para celulares?</summary>
+        <div>
+          <p class="text-base font-normal pr-12 mt-4  dark:text-slate-100 transition-custom">Nos enorgullece ofrecerte una amplia gama de productos diseñados para complementar y proteger tu celular. Desde cables USB duraderos hasta cargadores de carga rápida.</p>
+          <p class="text-base font-normal pr-12 mt-4  dark:text-slate-100 transition-custom">Además, protege la pantalla de tu celular con nuestros vidrios templados resistentes y ultra claros te brindarán una protección adicional contra golpes, rayones y roturas, sin comprometer la sensibilidad táctil de tu dispositivo.</p>
+        </div>
+      </details>
+     
+    </div>
+  </section>
+  <!-- WhatsApp -->
+  <section class="px-6 py-16 md:px-10 md:hidden">
+    <div class="border border-zinc-200 p-6 dark:border-slate-700 rounded-2xl transition-custom">
+      <h3 class="flex items-center">
+        <i class="uil uil-whatsapp text-2xl text-green-500"></i>
+        <span class="ml-1 text-base font-semibold text-slate-900 dark:text-slate-100 transition-custom">Chatea con nosotros</span>
+      </h3>
+      <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 transition-custom">Presupuestamos tu reparacion o te asesoramos sin cargo.</p>
+      <div class="mt-6 flex">
+        <input id="inputWhatsapp" type="text" placeholder="Tengo una consulta" class="px-3 py-2 w-full rounded-md border border-zinc-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-slate-900 dark:border-slate-700/40 dark:text-slate-100 transition-custom">
+        <a id="whatsappLink" (click)="sendWhatsApp()" class="ml-4 px-4 py-2 bg-primary-500 rounded-md"><i class="uil uil-message text-white text-base"></i></a>
+      </div>
+    </div>
+  </section>
+</div>
