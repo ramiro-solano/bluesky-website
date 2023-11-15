@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-inicio-page',
-  templateUrl: './inicio-page.component.html',
-  styleUrls: ['./inicio-page.component.css']
+    selector: 'app-inicio-page',
+    templateUrl: './inicio-page.component.html',
+    styleUrls: ['./inicio-page.component.css'],
+    standalone: true,
+    imports: [NgFor, NgClass]
 })
 export class InicioPageComponent implements OnInit{
   logosCompany = [

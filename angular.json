@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BlueskyWebsite:build:production"
+              "buildTarget": "BlueskyWebsite:build:production"
             },
             "development": {
-              "browserTarget": "BlueskyWebsite:build:development"
+              "buildTarget": "BlueskyWebsite:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BlueskyWebsite:build"
+            "buildTarget": "BlueskyWebsite:build"
           }
         },
         "test": {
