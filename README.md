@@ -1,4 +1,4 @@
-# Bluesky Website v
+# Bluesky Website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17
 Desplegado en Netlify [Blueskymobiles](https://blueskymobiles.com.ar)
