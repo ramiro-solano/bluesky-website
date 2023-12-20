@@ -1,0 +1,13 @@
+@tailwind components;
+
+.sections{
+    @apply h-auto mx-auto pb-24 grid grid-cols-1 gap-x-6 gap-y-10 max-w-5xl sm:grid-cols-2 lg:grid-cols-3 animate-fade-up animate-duration-500 animate-delay-300 animate-ease-in-out;
+
+    & article{
+        @apply w-full p-8 border border-zinc-200 rounded-2xl bg-white/50 shadow-sm  dark:bg-slate-800/50 dark:border-slate-700;
+
+        & div{
+            @apply h-[55px] w-[55px] rounded-xl bg-primary-100 dark:bg-primary-900
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<header>
+    <nav class="fixed inset-x-0 top-0 z-50 flex items-center justify-between h-14 px-6 sm:px-10 bg-white/50 backdrop-blur-md dark:bg-slate-900/70 transition-custom">
+      
+        <!-- Isologo -->
+        <img class="h-8 w-auto" src="../../../../assets/bluesky-isologo.webp" alt="Bluesky Logo">
+
+        <!-- Desk bar -->
+        <div class="hidden sm:flex h-full items-center">
+            @for (item of menuNavBar; track item.title){
+                <li class="list-none flex h-full items-center" routerLinkActive="border-b-2 border-primary-600 ">
+                    <a [routerLink]="item.router" attr.aria-label="{{item.label}}" [tabIndex]="item.index" class="flex h-full  items-center mx-8  text-sm font-semibold leading-6 text-neutral-800 dark:text-slate-200 transition-custom " >
+                        {{item.title}}
+                    </a>
+                </li>
+            }
+        </div>
+
+        <!-- Mune mobile button -->
+        <button (click)="btnMenu()" type="button" aria-label="Menu de navegacion" class="[&>svg]:sm:hidden [&>svg]:fill-gray-500 [&>svg]:dark:fill-slate-300 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:transition-custom">
+            @if (!MenuResponsiveActive){
+                <!-- Mune icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm7 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+                </svg>
+            } @else {
+                <!-- Close mune icon  -->
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class=" fill-gray-500  transition-custom  ">
+                    <path d="M12 13.3998L7.10005 18.2998C6.91672 18.4831 6.68338 18.5748 6.40005 18.5748C6.11672 18.5748 5.88338 18.4831 5.70005 18.2998C5.51672 18.1165 5.42505 17.8831 5.42505 17.5998C5.42505 17.3165 5.51672 17.0831 5.70005 16.8998L10.6 11.9998L5.70005 7.0998C5.51672 6.91647 5.42505 6.68314 5.42505 6.3998C5.42505 6.11647 5.51672 5.88314 5.70005 5.6998C5.88338 5.51647 6.11672 5.4248 6.40005 5.4248C6.68338 5.4248 6.91672 5.51647 7.10005 5.6998L12 10.5998L16.9 5.6998C17.0834 5.51647 17.3167 5.4248 17.6 5.4248C17.8834 5.4248 18.1167 5.51647 18.3 5.6998C18.4834 5.88314 18.575 6.11647 18.575 6.3998C18.575 6.68314 18.4834 6.91647 18.3 7.0998L13.4 11.9998L18.3 16.8998C18.4834 17.0831 18.575 17.3165 18.575 17.5998C18.575 17.8831 18.4834 18.1165 18.3 18.2998C18.1167 18.4831 17.8834 18.5748 17.6 18.5748C17.3167 18.5748 17.0834 18.4831 16.9 18.2998L12 13.3998Z"/>
+                </svg>                
+            }
+        </button>
+        
+        <!-- Button dark mode -->
+        <app-dark-mode-button class="hidden sm:flex"/>
+    </nav>
+    
+    <!-- Menu responsive -->
+    <div class="menu-responsive absolute pt-14 overflow-hidden -translate-y-full h-screen w-full px-3 py-5 bg-white dark:bg-slate-900 opacity-0 transition-all ease-in-out duration-500">
+        <div class="list-none py-4 ruetes">
+            @for ( item of menuNavBar; track item.title ){
+                <li class="mt-1">
+                    <a (click)="btnMenu()" [routerLink]="item.router" attr.aria-label="{{item.label}}" class="block text-black dark:text-slate-100 rounded-md px-3 py-2 text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-custom" routerLinkActive="bg-gray-200 dark:bg-gray-800 transition-custom">
+                        {{item.title}}
+                    </a>
+                </li>
+            }
+        </div>
+        <li class="flex items-center list-none py-4 border-t border-slate-200 dark:border-slate-700 transition-custom">
+            <p class="block text-black dark:text-slate-100 rounded-md px-3 py-2 text-base font-medium transition-custom">
+                Cambiar tema
+            </p>
+            <!-- Button dark mode -->
+            <app-dark-mode-button class=" p-1 border border-slate-200 dark:border-slate-700 rounded-xl transition-custom"/>
+        </li>
+    </div>
+</header>

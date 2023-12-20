@@ -1,7 +1,0 @@
-.active{
-    @apply fixed inline opacity-100 translate-y-0 z-10
-  }
-
-  .logo-blue{
-    @apply dark:fill-white
-    }
