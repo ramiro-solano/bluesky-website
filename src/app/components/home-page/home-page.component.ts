@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgClass, NgFor } from '@angular/common';
 
 @Component({
@@ -9,7 +9,12 @@ import { NgClass, NgFor } from '@angular/common';
     imports: [NgFor, NgClass]
 })
 export class HomePageComponent implements OnInit{
-  
+
+    @ViewChild('inputWhatsapp') inputWhatsapp!: ElementRef<HTMLInputElement>;
+    @ViewChild('whatsappLink') whatsappLink!: ElementRef<HTMLAnchorElement>;
+    @ViewChild('services') servicesSection!: ElementRef<HTMLDivElement>;
+    @ViewChild('animatedTexts') animatedTexts!: ElementRef<HTMLSpanElement>;
+
     companyLogos = [
         {   
             ruta: "../../../../../assets/company-logos/samsung-logo.svg",
@@ -65,12 +70,12 @@ export class HomePageComponent implements OnInit{
     ]
     
     scrollToSection(): void {
-        document.getElementById("servicios")?.scrollIntoView({behavior:'smooth'})
+        this.servicesSection.nativeElement.scrollIntoView({behavior:'smooth'})
     }
     
     sendWhatsApp(){
-        const input = document.getElementById('inputWhatsapp') as HTMLInputElement;
-        const whatsappLink = document.getElementById('whatsappLink') as HTMLAnchorElement;
+        const input = this.inputWhatsapp.nativeElement;
+        const whatsappLink = this.whatsappLink.nativeElement;
     
         const message = input.value;
         const numberPhone = +5493812116637;
@@ -82,11 +87,11 @@ export class HomePageComponent implements OnInit{
 
         setTimeout(() => {
 
-            const span: HTMLElement | null = document.querySelector('.animated-texts');
+            const span = this.animatedTexts.nativeElement;
             const words: Array<string> = ['tablets','celulares'];
             let wordIndex: number = 0;
             
-            const animatedTexts = setInterval(() => {
+            setInterval(() => {
                 let currentWord = words[wordIndex % words.length];
                 span!.innerText = currentWord;
                 wordIndex++;

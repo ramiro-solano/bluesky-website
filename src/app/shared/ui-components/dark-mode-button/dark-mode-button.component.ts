@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   	selector: 'app-dark-mode-button',
   	standalone: true,
-  	imports: [CommonModule],
   	template: `
 		<!-- Button dark mode -->
         <button (click)="toggleDarkMode()" type="button" aria-label="Modo oscuro y modo luz clara" class="flex justify-center items-center [&>svg]:fill-gray-500 [&>svg]:dark:fill-slate-300 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:transition-custom">
@@ -26,20 +24,20 @@ import { CommonModule } from '@angular/common';
 export class DarkModeButtonComponent implements OnInit{
 
 	isDarkMode: boolean = false;
-	indexHTML = document.querySelector('html');
+	html = document.querySelector('html');
 
 	//Dark mode button
     toggleDarkMode(): void {
-        const page = document.querySelector('html');
+        const page = this.html;
     
         this.isDarkMode === false? 
-            page?.classList.add('dark') : 
-            page?.classList.remove('dark')
+            page!.classList.add('dark') : 
+            page!.classList.remove('dark')
         ;
         this.isDarkMode = !this.isDarkMode;
 
         // Save mode to localstorage
-        page?.classList.contains('dark')? 
+        page!.classList.contains('dark')? 
             localStorage.setItem('dark-mode', 'true') : 
             localStorage.setItem('dark-mode', 'false')
         ;
@@ -48,8 +46,8 @@ export class DarkModeButtonComponent implements OnInit{
 	ngOnInit(): void {
 		// Check if save dark mode
         localStorage.getItem('dark-mode') === 'true'?
-            (this.isDarkMode = !this.isDarkMode, this.indexHTML?.classList.add('dark')) :
-            this.indexHTML?.classList.remove('dark')
+            ( this.isDarkMode = !this.isDarkMode, this.html!.classList.add('dark') ) :
+            this.html!.classList.remove('dark')
         ;
 	}
 }

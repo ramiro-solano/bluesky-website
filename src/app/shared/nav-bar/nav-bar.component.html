@@ -1,5 +1,5 @@
-<header>
-    <nav class="fixed inset-x-0 top-0 z-50 flex items-center justify-between h-14 px-6 sm:px-10 bg-white/50 backdrop-blur-md dark:bg-slate-900/70 transition-custom">
+<header class="h-14 w-full fixed top-0 z-50 rela bg-white/50 backdrop-blur-md dark:bg-slate-900/70 transition-custom">
+    <nav class="max-w-7xl mx-auto z-50 flex items-center justify-between h-14 px-6 sm:px-10 ">
       
         <!-- Isologo -->
         <img class="h-8 w-auto" src="../../../../assets/bluesky-isologo.webp" alt="Bluesky Logo">
@@ -17,7 +17,7 @@
 
         <!-- Mune mobile button -->
         <button (click)="btnMenu()" type="button" aria-label="Menu de navegacion" class="[&>svg]:sm:hidden [&>svg]:fill-gray-500 [&>svg]:dark:fill-slate-300 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:transition-custom">
-            @if (!MenuResponsiveActive){
+            @if (!isMenuActive){
                 <!-- Mune icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                     <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm7 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
@@ -33,24 +33,24 @@
         <!-- Button dark mode -->
         <app-dark-mode-button class="hidden sm:flex"/>
     </nav>
-    
-    <!-- Menu responsive -->
-    <div class="menu-responsive absolute pt-14 overflow-hidden -translate-y-full h-screen w-full px-3 py-5 bg-white dark:bg-slate-900 opacity-0 transition-all ease-in-out duration-500">
-        <div class="list-none py-4 ruetes">
-            @for ( item of menuNavBar; track item.title ){
-                <li class="mt-1">
-                    <a (click)="btnMenu()" [routerLink]="item.router" attr.aria-label="{{item.label}}" class="block text-black dark:text-slate-100 rounded-md px-3 py-2 text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-custom" routerLinkActive="bg-gray-200 dark:bg-gray-800 transition-custom">
-                        {{item.title}}
-                    </a>
-                </li>
-            }
-        </div>
-        <li class="flex items-center list-none py-4 border-t border-slate-200 dark:border-slate-700 transition-custom">
-            <p class="block text-black dark:text-slate-100 rounded-md px-3 py-2 text-base font-medium transition-custom">
-                Cambiar tema
-            </p>
-            <!-- Button dark mode -->
-            <app-dark-mode-button class=" p-1 border border-slate-200 dark:border-slate-700 rounded-xl transition-custom"/>
-        </li>
-    </div>
 </header>
+
+<!-- Menu responsive -->
+<div #menuResponsive class="absolute top-0 pt-14 overflow-hidden -translate-y-[200%] h-screen w-full px-3 py-5 bg-white dark:bg-slate-900 opacity-0 transition-custom">
+    <div class="list-none py-4 ruetes">
+        @for ( item of menuNavBar; track item.title ){
+            <li class="mt-1">
+                <a (click)="btnMenu()" [routerLink]="item.router" attr.aria-label="{{item.label}}" class="block text-black dark:text-slate-100 rounded-md px-3 py-2 text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-custom" routerLinkActive="bg-gray-200 dark:bg-gray-800 transition-custom">
+                    {{item.title}}
+                </a>
+            </li>
+        }
+    </div>
+    <li class="flex items-center list-none py-4 border-t border-slate-200 dark:border-slate-700 transition-custom">
+        <p class="block text-black dark:text-slate-100 rounded-md px-3 py-2 text-base font-medium transition-custom">
+            Cambiar tema
+        </p>
+        <!-- Button dark mode -->
+        <app-dark-mode-button class=" p-1 border border-slate-200 dark:border-slate-700 rounded-xl transition-custom"/>
+    </li>
+</div>

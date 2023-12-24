@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DarkModeButtonComponent } from '@shared/ui-components/dark-mode-button/dark-mode-button.component';
 
@@ -12,14 +12,20 @@ import { DarkModeButtonComponent } from '@shared/ui-components/dark-mode-button/
 
 export class NavBarComponent implements OnInit{
 
+    @ViewChild('menuResponsive') menuResponsive!: ElementRef<HTMLDivElement>;
     menuNavBar: Array<any> = [];
-    MenuResponsiveActive: boolean = false;
+    isMenuActive: boolean = false;
 
     //Menu Responsive
     btnMenu(): void { 
-        const menu = document.querySelector('.menu-responsive');
-        this.MenuResponsiveActive? menu?.classList.remove('active') : menu?.classList.add('active');
-        this.MenuResponsiveActive = !this.MenuResponsiveActive;
+        const menu = this.menuResponsive.nativeElement;
+
+        this.isMenuActive? 
+            menu.classList.remove('active') :
+            menu.classList.add('active')
+        ;
+        
+        this.isMenuActive = !this.isMenuActive;
     }
 
     
