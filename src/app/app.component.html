@@ -1,5 +1,11 @@
 <app-nav-bar/>
-    <div class="h-auto md:min-h-screen bg-white dark:bg-slate-900 transition-custom">
-        <router-outlet/>
-    </div>
-<app-footer/>
+
+<div class="h-auto md:min-h-screen bg-white dark:bg-slate-900 transition-custom">
+    <router-outlet/>
+</div>
+
+@defer (on viewport) {
+    <app-footer/>
+} @placeholder {
+    <div class="h-20"></div>
+}
